@@ -200,6 +200,17 @@ export class ZegoExpressManager {
           '[ZEGOCLOUD LOG][Manager][enableCamera] - Enable success',
           enable,
         );
+      });
+  }
+
+  useFrontCamera(enable: boolean): Promise<void> {
+    return ZegoExpressEngine.instance()
+      .useFrontCamera(enable)
+      .then(() => {
+        console.warn(
+          '[ZEGOCLOUD LOG][Manager][useFrontCamera] - Enable success',
+          enable,
+        );
         this.localParticipant.camera = enable;
         this.triggerStreamHandle('camera', enable);
       });

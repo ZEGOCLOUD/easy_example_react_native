@@ -50,12 +50,12 @@ const styles = StyleSheet.create({
 const now = new Date().getTime();
 const config = {
   // Get your AppID from ZEGOCLOUD Console [My Projects] : https://console.zegocloud.com/project
-  appID: ,
+  appID: 1719562607,
+  // Heroku server url for example
   // Heroku server url for example
   // Get the server from: https://github.com/ZEGOCLOUD/dynamic_token_server_nodejs
-  tokerServerUrl: , //  https://xxx.herokuapp.com
-  // TODO DO NOT use special characters for userID. 
-  // We recommend only contain letters, numbers, and '_'.
+  // e.g. https://xxx.herokuapp.com
+  tokerServerUrl: 'https://easy-example-call.herokuapp.com',
   userID: 'rn_user_' + now,
   userName: 'rn_user_' + now,
   roomID: '',
@@ -74,7 +74,7 @@ export default class Home extends Component {
     });
   }
   async startLive(isHost) {
-    // TODO roomID should be unique for every live streaming. And do not use special characters for it. 
+    // TODO roomID should be unique for every live streaming. And do not use special characters for it.
     // We recommend only contain letters, numbers, and '_'.
     config.roomID = this.state.inputValue;
     if (!config.roomID) {

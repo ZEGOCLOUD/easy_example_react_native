@@ -314,13 +314,24 @@ var ZegoExpressManager = /** @class */ (function () {
   };
   /// Turn on your camera if [enable] is true
   ZegoExpressManager.prototype.enableCamera = function (enable) {
-    var _this = this;
     return zego_express_engine_reactnative_1.default
       .instance()
       .enableCamera(enable)
       .then(function () {
         console.warn(
           '[ZEGOCLOUD LOG][Manager][enableCamera] - Enable success',
+          enable,
+        );
+      });
+  };
+  ZegoExpressManager.prototype.useFrontCamera = function (enable) {
+    var _this = this;
+    return zego_express_engine_reactnative_1.default
+      .instance()
+      .useFrontCamera(enable)
+      .then(function () {
+        console.warn(
+          '[ZEGOCLOUD LOG][Manager][useFrontCamera] - Enable success',
           enable,
         );
         _this.localParticipant.camera = enable;
